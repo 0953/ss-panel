@@ -25,12 +25,66 @@ require_once '_main.php'; ?>
                             <p>邮箱：<?php echo $user_email; ?></p>
                             <p> 套餐：<span class="label label-info"> <?php echo $oo->get_plan();?> </span> </p>
                             <p> 账户余额：<?php echo $oo->get_money();?>元 </p>
-                            <p><a class="btn btn-danger btn-sm" href="kill.php">删除我的账户</a></p>
+                            <!--<p><a class="btn btn-danger btn-sm" href="kill.php">删除我的账户</a></p>-->
                         </div><!-- /.box -->
                     </div>
                 </div>
             </div>
         </section><!-- /.content -->
+
+        <!-- Content Header (Page header) -->
+        <section class="content-header">
+            <h1>
+                套餐购买
+                <small>Package Purchase</small>
+            </h1>
+        </section>
+
+        <!-- Main content -->
+        <section class="content">
+            <div class="row">
+                <!-- left column -->
+                <div class="col-md-3">
+                    <!-- general form elements -->
+                    <div class="box box-primary">
+                        <div class="box-body">
+                            <p>套餐名称：包月套餐</p>
+                            <p>价格：10￥</p>
+                            <p>说明：数量表示购买几个月</p>
+                            <p>数量：<input type="number" value="1" id="nowpwd"> </p>
+                            <p><a class="btn btn-danger btn-sm" href="pay.php">购买</a></p>
+                        </div><!-- /.box -->
+                    </div>
+                </div>
+                <!-- left column -->
+                <div class="col-md-3">
+                    <!-- general form elements -->
+                    <div class="box box-primary">
+                        <div class="box-body">
+                            <p>套餐名称：半年套餐</p>
+                            <p>价格：55￥</p>
+                            <p>说明：数量表示购买几个半年套餐</p>
+                            <p>数量：<input type="number" value="1" id="nowpwd"> </p>
+                            <p><a class="btn btn-danger btn-sm" href="pay.php">购买</a></p>
+                        </div><!-- /.box -->
+                    </div>
+                </div>
+                <!-- left column -->
+                <div class="col-md-3">
+                    <!-- general form elements -->
+                    <div class="box box-primary">
+                        <div class="box-body">
+                            <p>套餐名称：包年套餐</p>
+                            <p>价格：100￥</p>
+                            <p>说明：数量表示购买多少年</p>
+                            <p>数量：<input type="number" value="1" id="nowpwd"> </p>
+                            <p><a class="btn btn-danger btn-sm" href="pay.php">购买</a></p>
+                        </div><!-- /.box -->
+                    </div>
+                </div>
+            </div>
+        </section><!-- /.content -->
+
     </div><!-- /.content-wrapper -->
 <?php
 require_once '_footer.php'; ?>
