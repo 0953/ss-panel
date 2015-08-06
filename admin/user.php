@@ -18,6 +18,7 @@ $Users = new Ss\User\User();
         <section class="content">
             <div class="row">
                 <div class="col-xs-12">
+                    <p> <a class="btn btn-success btn-sm" href="user_add.php">添加</a> </p>
                     <div class="box">
                         <div class="box-body table-responsive no-padding">
                             <table class="table table-hover">
