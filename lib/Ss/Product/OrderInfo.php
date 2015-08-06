@@ -23,6 +23,17 @@ class OrderInfo {
         return $datas;
     }
 
+    function UpdateStatus($status){
+        $this->db->update($this->table,
+            [
+                "status" => $status
+            ],
+        [
+            "id" => $this->id,
+            "LIMIT" => "1"
+        ]);
+    }
+
     function OrderArray(){
         $datas = $this->db->select($this->table,"*",[
             "id" => $this->id,

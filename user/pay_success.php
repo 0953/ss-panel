@@ -25,6 +25,7 @@ require_once '_main.php'; ?>
                     if($_GET['out_trade_no'] != null)
                     {
                       $orderinfo = new \Ss\Product\OrderInfo($_GET['out_trade_no']);
+                      $orderinfo->UpdateStatus(1);
                       $orders = $orderinfo->GetOrder();
                       foreach($orders as $o){ ?>
                           <div class="box box-primary">
