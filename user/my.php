@@ -48,11 +48,14 @@ require_once '_main.php'; ?>
                     <!-- general form elements -->
                     <div class="box box-primary">
                         <div class="box-body">
-                            <p>套餐名称：包月套餐</p>
-                            <p>价格：10￥</p>
-                            <p>说明：数量表示购买几个月</p>
-                            <p>数量：<input type="number" value="1" id="nowpwd"> </p>
-                            <p><a class="btn btn-danger btn-sm" href="pay.php">购买</a></p>
+                            <form action="pay.php" method="post">
+                                <p>套餐名称：包月套餐</p>
+                                <p>价格：10￥</p>
+                                <p>说明：数量表示购买几个月</p>
+                                <p>数量：<input type="number" value="1" name="n"> </p>
+                                <input type="number" value="1" name="p" hidden="true">
+                                <input class="btn btn-danger btn-sm" type="submit" value="购买" />
+                            </form>
                         </div><!-- /.box -->
                     </div>
                 </div>
@@ -61,11 +64,14 @@ require_once '_main.php'; ?>
                     <!-- general form elements -->
                     <div class="box box-primary">
                         <div class="box-body">
-                            <p>套餐名称：半年套餐</p>
-                            <p>价格：55￥</p>
-                            <p>说明：数量表示购买几个半年套餐</p>
-                            <p>数量：<input type="number" value="1" id="nowpwd"> </p>
-                            <p><a class="btn btn-danger btn-sm" href="pay.php">购买</a></p>
+                            <form action="pay.php" method="post">
+                                <p>套餐名称：半年套餐</p>
+                                <p>价格：55￥</p>
+                                <p>说明：数量表示购买几个半年套餐</p>
+                                <p>数量：<input type="number" value="1" name="n"> </p>
+                                <input type="number" value="2" name="p" hidden="true">
+                                <input class="btn btn-danger btn-sm" type="submit" value="购买" />
+                            </form>
                         </div><!-- /.box -->
                     </div>
                 </div>
@@ -74,11 +80,14 @@ require_once '_main.php'; ?>
                     <!-- general form elements -->
                     <div class="box box-primary">
                         <div class="box-body">
-                            <p>套餐名称：包年套餐</p>
-                            <p>价格：100￥</p>
-                            <p>说明：数量表示购买多少年</p>
-                            <p>数量：<input type="number" value="1" id="nowpwd"> </p>
-                            <p><a class="btn btn-danger btn-sm" href="pay.php">购买</a></p>
+                            <form action="pay.php" method="post">
+                                <p>套餐名称：包年套餐</p>
+                                <p>价格：100￥</p>
+                                <p>说明：数量表示购买多少年</p>
+                                <p>数量：<input type="number" value="1" name="n"> </p>
+                                <input type="number" value="3" name="p" hidden="true">
+                                <input class="btn btn-danger btn-sm" type="submit" value="购买" />
+                            </form>
                         </div><!-- /.box -->
                     </div>
                 </div>
