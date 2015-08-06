@@ -17,8 +17,10 @@ namespace Ss\Product;
          $this->db  = $db;
      }
 
-     function Create($p_id, $p_price, $p_number, $total, $user_id, $status){
+     function Create($name, $description, $p_id, $p_price, $p_number, $total, $user_id, $status){
         $this->db->insert("ss_order",[
+            "name" => $name,
+            "description" => $description,
             "p_id" => $p_id,
             "p_price" => $p_price,
             "p_number" => $p_number,
@@ -29,20 +31,34 @@ namespace Ss\Product;
         ]);
      }
 
-     function AllOrder(){
+     function AllOrder($uid){
         $datas = $this->db->select($this->table,"*", [
-             "ORDER" => "create_time DESC"
-         ]);
-        return $datas;
-     }
-
-    function AllNotPaiedOrder(){
-        $datas = $this->db->select($this->table,"*", [
-            "status" => 0,
+            "user_id" => $uid,
             "ORDER" => "create_time DESC"
          ]);
         return $datas;
      }
+
+    function AllNotPaiedOrder($uid){
+        $datas = $this->db->select($this->table,"*", [
+            "AND" => [
+                "user_id" => $uid,
+                "status" => 0
+            ],
+            "ORDER" => "create_time DESC"
+         ]);
+        return $datas;
+     }
+
+    function delAllNotPaied($uid){
+        $this->db->delete($this->table,[
+            "AND" => [
+                "user_id" => $uid,
+                "status" => 0
+            ]
+        ]);
+        return 1;
+    }
 
      function del(){
          $this->db->delete($this->table,[

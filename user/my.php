@@ -54,6 +54,7 @@ require_once '_main.php'; ?>
                                 <p>说明：数量表示购买几个月</p>
                                 <p>数量：<input type="number" value="1" name="n"> </p>
                                 <input type="number" value="1" name="p" hidden="true">
+                                <input type="text" value="<?php (new \DateTime())->format('Y-m-d H:i:s') ?>" name="order_time" hidden="true">
                                 <input class="btn btn-danger btn-sm" type="submit" value="购买" />
                             </form>
                         </div><!-- /.box -->
@@ -70,6 +71,7 @@ require_once '_main.php'; ?>
                                 <p>说明：数量表示购买几个半年套餐</p>
                                 <p>数量：<input type="number" value="1" name="n"> </p>
                                 <input type="number" value="2" name="p" hidden="true">
+                                <input type="text" value="<?php (new \DateTime())->format('Y-m-d H:i:s') ?>" name="order_time" hidden="true">
                                 <input class="btn btn-danger btn-sm" type="submit" value="购买" />
                             </form>
                         </div><!-- /.box -->
@@ -86,6 +88,7 @@ require_once '_main.php'; ?>
                                 <p>说明：数量表示购买多少年</p>
                                 <p>数量：<input type="number" value="1" name="n"> </p>
                                 <input type="number" value="3" name="p" hidden="true">
+                                <input type="text" value="<?php (new \DateTime())->format('Y-m-d H:i:s') ?>" name="order_time" hidden="true">
                                 <input class="btn btn-danger btn-sm" type="submit" value="购买" />
                             </form>
                         </div><!-- /.box -->

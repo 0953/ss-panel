@@ -15,6 +15,14 @@ class OrderInfo {
         $this->db  = $db;
     }
 
+    function GetOrder(){
+        $datas = $this->db->select($this->table,"*",[
+            "id" => $this->id,
+            "LIMIT" => "1"
+        ]);
+        return $datas;
+    }
+
     function OrderArray(){
         $datas = $this->db->select($this->table,"*",[
             "id" => $this->id,

@@ -27,11 +27,13 @@ require_once '_main.php'; ?>
                         $pinfo = new \Ss\Product\ProductInfo($pid);
                         $total = $number * $pinfo->Price();
                         $order = new \Ss\Product\Order();
-                        $order->Create($pid, $pinfo->Price(), $number, $total, $U->uid, 0);
-                        $orders = $order->AllNotPaiedOrder();
+                        $oname = $pinfo->Name() . 'x' . $number;
+                        $order->delAllNotPaied($U->uid);
+                        $order->Create($oname, $oname, $pid, $pinfo->Price(), $number, $total, $U->uid, 0);
                     ?>
 
                     <?php
+                    $orders = $order->AllNotPaiedOrder($U->uid);
                     foreach($orders as $o){ ?>
                         <div class="box box-primary">
                             <div class="box-body">

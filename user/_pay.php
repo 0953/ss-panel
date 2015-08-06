@@ -12,11 +12,11 @@ require_once("../lib/pay/alipay_submit.class.php");
         $payment_type = "1";
         //必填，不能修改
         //服务器异步通知页面路径
-        $notify_url = "http://localhost/ss-panel/user/pay.php";
+        $notify_url = "http://localhost/ss-panel/user/pay_success.php";
         //需http://格式的完整路径，不能加?id=123这类自定义参数
 
         //页面跳转同步通知页面路径
-        $return_url = "http://localhost/ss-panel/user/pay.php";
+        $return_url = "http://localhost/ss-panel/user/pay_success.php";
         //需http://格式的完整路径，不能加?id=123这类自定义参数，不能写成http://localhost/
 
         //商户订单号
@@ -26,7 +26,7 @@ require_once("../lib/pay/alipay_submit.class.php");
         //商户网站订单系统中唯一订单号，必填
 
         //订单名称
-        $subject = "傲娇的法律框架";
+        $subject = $o['name'];
         //必填
 
         //付款金额
@@ -38,8 +38,7 @@ require_once("../lib/pay/alipay_submit.class.php");
         //必填
 
         //订单描述
-
-        $body = "idgsg是打发";
+        $body = $o['description'];
         //商品展示地址
         $show_url = "http://ss.iturbo.net/user/my.php";
         //需以http://开头的完整路径，例如：http://www.商户网址.com/myorder.html
