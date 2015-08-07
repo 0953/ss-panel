@@ -19,6 +19,7 @@ namespace Ss\Product;
 
      function Create($name, $description, $p_id, $p_price, $p_number, $total, $user_id, $status){
         $this->db->insert("ss_order",[
+            "id" => $this->getOrderSerialNumber(),
             "name" => $name,
             "description" => $description,
             "p_id" => $p_id,
@@ -60,10 +61,17 @@ namespace Ss\Product;
         return 1;
     }
 
-     function del(){
-         $this->db->delete($this->table,[
-             "id" => $this->id
-         ]);
-         return 1;
-     }
+    function del(){
+        $this->db->delete($this->table,[
+            "id" => $this->id
+        ]);
+        return 1;
+    }
+
+
+    //
+    function getOrderSerialNumber() {
+        list($usec, $sec) = explode(" ", microtime());
+        return '' . (float)$sec . str_replace("0.","", (float)$usec);
+    }
  }
