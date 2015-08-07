@@ -48,7 +48,7 @@ require_once '_main.php'; ?>
                                     <?php if(0 == $o['status']){ ?>
                                     <p>
                                     <input class="btn btn-primary" type="submit" value="确认支付">
-                                    <input class="btn btn-danger" type="submit" value="取消订单">
+                                    <!--<input class="btn btn-danger" type="submit" value="取消订单">-->
                                     </p>
                                     <?php } ?>
                                 </form>
