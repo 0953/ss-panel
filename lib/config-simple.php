@@ -6,6 +6,8 @@
  * https://orvice.org
  */
 
+$debug = true;
+
 //定义流量
 $tokb = 1024;
 $tomb = 1024*1024;
@@ -32,7 +34,7 @@ $check_max = 100;
 
 //name
 $site_name = "ss-panel";
-$site_url  = "https://panel.com/";
+$site_url  = "http://localhost/";
 /**
  * 站点盐值，用于加密密码
  * 第一次安装请修改此值，安装后请勿修改！！否则会使所有密码失效，仅限加密方式不为1的时候有效
