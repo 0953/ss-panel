@@ -27,21 +27,11 @@ include_once 'header.php';
             <div class="col s12 m4">
                 <div class="icon-block">
                     <h2 class="center light-blue-text"><i class="material-icons">flash_on</i></h2>
-                    <h5 class="center">Super Fast</h5>
+                    <h5 class="center">快人一步</h5>
 
                     <p class="light">
-                        Bleeding edge techniques using Asynchronous I/O and Event-driven programming.
-                    </p>
-                </div>
-            </div>
-
-            <div class="col s12 m4">
-                <div class="icon-block">
-                    <h2 class="center light-blue-text"><i class="material-icons">group</i></h2>
-                    <h5 class="center">Open Source</h5>
-
-                    <p class="light">
-                        Totally free and open source. A worldwide community devoted to deliver bug-free code and long-term support.
+                        最新智能路由器硬件，无线传输速度超1000M，比普通路由器快2-3倍；
+专利网络加速技术，经对比测试，中东/欧洲/拉美/北美/亚太等海外网络访问速度提高10倍以上
                     </p>
                 </div>
             </div>
@@ -49,13 +39,27 @@ include_once 'header.php';
             <div class="col s12 m4">
                 <div class="icon-block">
                     <h2 class="center light-blue-text"><i class="material-icons">settings</i></h2>
-                    <h5 class="center">Easy to work with</h5>
+                    <h5 class="center">易如反掌</h5>
 
                     <p class="light">
-                        Avaliable on multiple platforms, including PC, MAC, Mobile (Android and iOS) and Routers (OpenWRT).
+                        专为外贸行业设计的路由器软件，三步两分钟完成路由器上网配置；
+手机、电脑有线或无线连上路由器就可以访问国内外各种网站，真正零配置，简单才是王道
                     </p>
                 </div>
             </div>
+
+            <div class="col s12 m4">
+                <div class="icon-block">
+                    <h2 class="center light-blue-text"><i class="material-icons">group</i></h2>
+                    <h5 class="center">通达四海</h5>
+
+                    <p class="light">
+                        专为外贸行业设计的快易通服务，轻松稳定访问google/facebook/twitter等所有网站；
+路由器能智能区分国内、国外网络，国内网络高速直连，不耗费海外访问流量，省钱又省心
+                    </p>
+                </div>
+            </div>
+
         </div>
 
     </div>
