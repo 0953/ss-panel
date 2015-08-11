@@ -1,4 +1,5 @@
 <?php
+require_once '../lib/config.php';
 require_once '_main.php'; ?>
 
     <!-- =============================================== -->
@@ -31,6 +32,10 @@ require_once '_main.php'; ?>
                 </div>
             </div>
         </section><!-- /.content -->
+
+        <?php
+            if($show_product){
+        ?>
 
         <!-- Content Header (Page header) -->
         <section class="content-header">
@@ -96,6 +101,10 @@ require_once '_main.php'; ?>
                 </div>
             </div>
         </section><!-- /.content -->
+
+        <?php
+            }
+        ?>
 
     </div><!-- /.content-wrapper -->
 <?php

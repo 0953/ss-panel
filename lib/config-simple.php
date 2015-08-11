@@ -7,6 +7,10 @@
  */
 
 $debug = true;
+$show_product = false;
+$show_download = false;
+$invite_necessary = false;
+$show_user_node = false;
 
 //定义流量
 $tokb = 1024;

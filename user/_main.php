@@ -100,11 +100,13 @@ require_once '_check.php';
                     </a>
                 </li>
 
+                <?php if($show_user_node){ ?>
                 <li>
                     <a href="node.php">
                         <i class="fa fa-sitemap"></i> <span>节点列表</span>
                     </a>
                 </li>
+                <?php } ?>
 
                 <li >
                     <a href="my.php">

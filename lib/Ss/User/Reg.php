@@ -16,11 +16,24 @@ class Reg {
     }
 
     function GetLastPort(){
-        $datas = $this->db->select($this->table,"*",[
-            "ORDER" => "uid DESC",
+        $datas = $this->db->select('ss_port',"*",[
+            "used" => 0,
+            "ORDER" => "id AESC",
             "LIMIT" => 1
         ]);
-        return $datas['0']['port'];
+        
+        if(count($datas) == 1){
+            $this->db->update('ss_port', 
+                [
+                    "used" => 1
+                ], [
+                    "id" => $datas['0']['id']
+                ]);
+            return $datas['0']['port'];
+        }else{
+            return 0;
+        }
+
     }
 
     function Reg($username,$email,$pass,$plan,$transfer,$invite_num,$ref_by){
@@ -37,7 +50,7 @@ class Reg {
             "d" => '0',
             "plan" => $plan,
             "transfer_enable" => $transfer,
-            "port" => $this->GetLastPort()+rand(1,5),
+            "port" => $this->GetLastPort(),
             "invite_num" => $invite_num,
             "money" => '0',
             "#reg_date" =>  'NOW()',
