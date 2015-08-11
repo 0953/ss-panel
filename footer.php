@@ -25,16 +25,16 @@
         </div>
     </div>
     
-    <div class="footer-copyright">
-        <div class="container">
+    <div class="footer-copyright" style="height:0px;">
         <?php if($show_copyright){ ?>
+        <div class="container">
             &copy; <?php echo $site_name."  ".date('Y'); ?>  Powered by <a class="orange-text text-lighten-3" href="https://github.com/orvice/ss-panel">ss-panel</a> <?php echo $version; ?>
             Processed in <?php
             $Runtime->Stop();
             echo $Runtime->SpendTime()."ms";
             ?> Theme by <a class="orange-text text-lighten-3" href="http://materializecss.com">Materialize</a>
-        <?php } ?>
         </div>
+        <?php } ?>
     </div>
     
 </footer>
