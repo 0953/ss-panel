@@ -24,15 +24,19 @@
             </div>
         </div>
     </div>
+    
     <div class="footer-copyright">
         <div class="container">
+        <?php if($show_copyright){ ?>
             &copy; <?php echo $site_name."  ".date('Y'); ?>  Powered by <a class="orange-text text-lighten-3" href="https://github.com/orvice/ss-panel">ss-panel</a> <?php echo $version; ?>
             Processed in <?php
             $Runtime->Stop();
             echo $Runtime->SpendTime()."ms";
             ?> Theme by <a class="orange-text text-lighten-3" href="http://materializecss.com">Materialize</a>
+        <?php } ?>
         </div>
     </div>
+    
 </footer>
 
 

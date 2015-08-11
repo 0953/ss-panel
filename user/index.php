@@ -94,6 +94,7 @@ $unix_time = $oo->get_last_unix_time();
                             <h3 class="box-title">连接信息</h3>
                         </div><!-- /.box-header -->
                         <div class="box-body">
+                            <p> 服务器：<code><?php echo $node_addr;?></code> </p>
                             <p> 端口：<code><?php echo $oo->get_port();?></code> </p>
                             <p> 密码：<?php echo $oo->get_pass();?> </p>
                             <p> 套餐：<span class="label label-info"> <?php echo $oo->get_plan();?> </span> </p>
