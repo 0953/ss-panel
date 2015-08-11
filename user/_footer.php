@@ -7,7 +7,7 @@
         ?>
     </div>
     <strong>Copyright &copy; 2014-<?php echo date('Y'); ?> <a href="#"><?php echo $site_name;  ?></a> </strong>
-            All rights reserved.  Powered by  <b>ss-panel</b><?php echo $version; ?> | <a href="tos.php">服务条款  </a>
+            All rights reserved. | <a href="tos.php">服务条款  </a>
 </footer>
 </div><!-- ./wrapper -->
 <?php

@@ -12,7 +12,9 @@ include_once 'header.php';
                 <h5 class="header col s12 light">轻松科学上网   保护个人隐私</h5>
             </div>
             <div class="row center">
-                <a href="user/register.php" id="download-button" class="btn-large waves-effect waves-light orange">立即注册</a>
+                <a href="user" id="download-button2" class="btn-large waves-effect waves-light orange">登&nbsp;&nbsp;录</a>
+                <a style="margin:20px;"></a>
+                <a href="user/register.php" id="download-button" class="btn-large waves-effect waves-light orange">注&nbsp;&nbsp;册</a>
             </div>
             <br><br>
         </div>
