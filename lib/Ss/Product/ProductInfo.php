@@ -35,6 +35,23 @@ class ProductInfo {
         return $this->ProductArray()['description'];
     }
 
+    /* 0=删除，1=关闭，2=启用 */
+    function SetState($state){
+        $this->db->update($this->table,[
+            "state" => $state
+            ],[
+            "id" => $this->id
+        ]);
+    }
+
+    function DelMe(){
+        $this->db->update($this->table,[
+            "state" => 0
+            ],[
+            "id" => $this->id
+        ]);
+    }
+
     function Del(){
         $this->db->delete($this->table,[
             "id" => $this->id

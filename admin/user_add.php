@@ -54,8 +54,8 @@ if(!empty($_POST)){
     <!-- Content Header (Page header) -->
     <section class="content-header">
         <h1>
-            节点添加
-            <small>Add Node</small>
+            用户添加
+            <small>Add User</small>
         </h1>
     </section>
 

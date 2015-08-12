@@ -18,7 +18,7 @@ namespace Ss\Product;
      }
 
      function Create($name, $description, $p_id, $p_price, $p_number, $total, $user_id, $status){
-        $this->db->insert("ss_order",[
+        $this->db->insert($this->table,[
             "id" => $this->getOrderSerialNumber(),
             "name" => $name,
             "description" => $description,
