@@ -124,6 +124,12 @@ require_once '_check.php';
                     </a>
                 </li>
 
+                <li>
+                    <a href="mail.php">
+                        <i class="fa fa-users"></i> <span>发送邮件</span>
+                    </a>
+                </li>
+
             </ul>
         </section>
         <!-- /.sidebar -->
