@@ -33,6 +33,16 @@ namespace Ss\User;
              "uid" => $this->uid
          ]);
      }
+
+     function exist($email, $passwd){
+        return $this->db->has($this->table, [
+            "AND" =>[
+                "email" => $email,
+                "pass" => $passwd
+            ]
+        ]);
+     }
+
      //del user
      function del(){
          $this->db->delete("user",[
