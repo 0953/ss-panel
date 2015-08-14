@@ -7,10 +7,6 @@ $passwd = \Ss\User\Comm::SsPW($passwd);
 $user = new \Ss\User\User();
 $ret = $user->login_check($email, $passwd);
 
-echo $account . '<br>';
-
-var_dump($ret);
-
 if($ret){
     $rs['code'] = '1';
     $rs['ok'] = '1';
