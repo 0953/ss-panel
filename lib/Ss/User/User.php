@@ -34,13 +34,29 @@ namespace Ss\User;
          ]);
      }
 
-     function exist($email, $passwd){
-        return $this->db->has($this->table, [
+     function verify($email, $passwd){
+        $datas = $this->db->select($this->table,"*", [
             "AND" =>[
                 "email" => $email,
                 "pass" => $passwd
-            ]
+            ],
+            "LIMIT" => 1
         ]);
+
+        $rs;
+        if(count($datas) == 1){
+            $rs['code'] = '1';
+            $rs['ok'] = '1';
+            $rs['msg'] = "欢迎回来";
+            $rs['node'] = 's1.kytong.net';
+            $rs['account'] = '334455';
+            $rs['passwd'] = 'z5em34';
+        }else{
+            $rs['code'] = '0';
+            $rs['msg'] = "账户或者密码错误";
+        }
+
+        return $rs;
      }
 
      //del user
