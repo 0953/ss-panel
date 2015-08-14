@@ -5,7 +5,7 @@ $passwd = $_POST['passwd'];
 $passwd = \Ss\User\Comm::SsPW($passwd);
 
 $user = new \Ss\User\User();
-$ret = $user->login_check($email, $passwd);
+$ret = $user->login_check($account, $passwd);
 
 if($ret){
     $rs['code'] = '1';
