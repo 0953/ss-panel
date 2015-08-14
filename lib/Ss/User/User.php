@@ -45,12 +45,15 @@ namespace Ss\User;
 
         $rs;
         if(count($datas) == 1){
+            $node = new \Ss\Node\NodeInfo($datas[0]['node_id']);
+
             $rs['code'] = '1';
             $rs['ok'] = '1';
             $rs['msg'] = "欢迎回来";
-            $rs['node'] = 's1.kytong.net';
-            $rs['account'] = '334455';
-            $rs['passwd'] = 'z5em34';
+            $rs['node'] = $node->Server();
+            $rs['account'] = $datas[0]['port'];
+            $rs['passwd'] = $datas[0]['passwd'];
+            $rs['method'] = $node->Method();
         }else{
             $rs['code'] = '0';
             $rs['msg'] = "账户或者密码错误";
