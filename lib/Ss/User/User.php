@@ -46,14 +46,16 @@ namespace Ss\User;
         $rs;
         if(count($datas) == 1){
             $node = new \Ss\Node\NodeInfo($datas[0]['node_id']);
+            $u = $datas[0];
 
             $rs['code'] = '1';
             $rs['ok'] = '1';
             $rs['msg'] = "欢迎回来";
             $rs['node'] = $node->Server();
-            $rs['account'] = $datas[0]['port'];
-            $rs['passwd'] = $datas[0]['passwd'];
+            $rs['account'] = $u['port'];
+            $rs['passwd'] = $u['passwd'];
             $rs['method'] = $node->Method();
+            $rs['features']['adfilter'] = $u['f_adfilter'];
         }else{
             $rs['code'] = '0';
             $rs['msg'] = "账户或者密码错误";
