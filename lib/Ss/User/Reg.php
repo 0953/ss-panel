@@ -44,7 +44,8 @@ class Reg {
            "user_name" => $username,
             "email" => $email,
             "pass" => $pass,
-            "passwd" =>  $sspass,
+            "passwd" => $sspass,
+            "node_id" => 1,
             "t" => '0',
             "u" => '0',
             "d" => '0',
@@ -54,7 +55,8 @@ class Reg {
             "invite_num" => $invite_num,
             "money" => '0',
             "#reg_date" =>  'NOW()',
-            "ref_by" => $ref_by
+            "ref_by" => $ref_by,
+            "f_adfilter" => 0
         ]);
     }
 
