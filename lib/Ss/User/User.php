@@ -66,10 +66,21 @@ namespace Ss\User;
 
      //del user
      function del(){
-         $this->db->delete("user",[
-             "uid" => $this->uid
-         ]);
-         return 1;
+        $datas = $this->db->select($this->table,"*", [
+            "uid" => $this->uid,
+            "LIMIT" => 1
+        ]);
+
+        if(count($datas) == 1){
+            $u = $datas[0];
+            (new \Ss\Node\Port())->RevertPort($u['node_id'], $u['port']);
+            $this->db->delete($this->table,[
+                "uid" => $this->uid
+            ]);
+            return 1;
+        }else{
+            return 0;
+        }
      }
 
      //获取 临时 temp $pass

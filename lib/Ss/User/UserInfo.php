@@ -95,8 +95,20 @@ class UserInfo {
     }
 
     function DelMe(){
-        $this->db->delete($this->table,[
-            "uid" => $this->uid
+        $datas = $this->db->select($this->table,"*", [
+            "uid" => $this->uid,
+            "LIMIT" => 1
         ]);
+
+        if(count($datas) == 1){
+            $u = $datas[0];
+            (new \Ss\Node\Port())->RevertPort($u['node_id'], $u['port']);
+            $this->db->delete($this->table,[
+                "uid" => $this->uid
+            ]);
+            return 1;
+        }else{
+            return 0;
+        }
     }
 }
