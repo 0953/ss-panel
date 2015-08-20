@@ -4,13 +4,13 @@ Navicat MySQL Data Transfer
 Source Server         : local-mumu
 Source Server Version : 50624
 Source Host           : localhost:3306
-Source Database       : shadowsocks2
+Source Database       : shadowsocks
 
 Target Server Type    : MYSQL
 Target Server Version : 50624
 File Encoding         : 65001
 
-Date: 2015-08-06 17:38:10
+Date: 2015-08-20 16:11:24
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -20,7 +20,7 @@ SET FOREIGN_KEY_CHECKS=0;
 -- ----------------------------
 DROP TABLE IF EXISTS `ss_order`;
 CREATE TABLE `ss_order` (
-  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `id` varchar(255) NOT NULL,
   `name` varchar(255) DEFAULT NULL,
   `description` varchar(255) DEFAULT NULL,
   `p_id` int(11) DEFAULT NULL,
@@ -31,9 +31,4 @@ CREATE TABLE `ss_order` (
   `status` int(11) DEFAULT NULL,
   `create_time` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=74 DEFAULT CHARSET=utf8;
-
--- ----------------------------
--- Records of ss_order
--- ----------------------------
-INSERT INTO `ss_order` VALUES ('73', '半年套餐x3', '半年套餐x3', '2', '3', '55', '165', '12', '0', '2015-08-06 17:20:13');
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;

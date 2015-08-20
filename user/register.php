@@ -23,7 +23,7 @@ require_once '../lib/config.php';
     <![endif]-->
 </head>
 <body class="register-page">
-<div class="register-box">
+<div class="register-box" style="margin-top:30px;">
     <div class="register-logo">
         <a href="../"><b><?php echo $site_name;  ?></b></a>
     </div>
@@ -50,6 +50,15 @@ require_once '../lib/config.php';
             <div class="form-group has-feedback">
                 <input type="text" id="code" class="form-control" placeholder="邀请码，可不填"/>
                 <span class="glyphicon glyphicon-send form-control-feedback"></span>
+            </div>            
+            <div class="form-group has-feedback">
+                <select class="form-control" id="node">
+                  <?php 
+                  $nodes = (new Ss\Node\Node())->AllNodeAvailable();
+                  foreach($nodes as $node) { ?>
+                  <option value="<?php echo $node['id'] ?>"><?php echo $node['node_name'] ?></option>
+                  <?php } ?>
+                </select>
             </div>
 
 
@@ -108,7 +117,8 @@ require_once '../lib/config.php';
                     passwd: $("#passwd").val(),
                     repasswd: $("#repasswd").val(),
                     code: $("#code").val(),
-                    agree: $("#agree").val()
+                    agree: $("#agree").val(),
+                    node: $("#node").val()
                 },
                 success:function(data){
                     if(data.ok){

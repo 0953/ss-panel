@@ -36,7 +36,7 @@ class Reg {
 
     }
 
-    function Reg($username,$email,$pass,$plan,$transfer,$invite_num,$ref_by){
+    function Reg($username,$email,$pass,$plan,$transfer,$invite_num,$ref_by,$node){
 
         $sspass = \Ss\Etc\Comm::get_random_char(8);
 
@@ -45,7 +45,7 @@ class Reg {
             "email" => $email,
             "pass" => $pass,
             "passwd" => $sspass,
-            "node_id" => 1,
+            "node_id" => $node,
             "t" => '0',
             "u" => '0',
             "d" => '0',

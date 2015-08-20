@@ -7,6 +7,7 @@ $name = $_POST['name'];
 $repasswd = $_POST['repasswd'];
 $agree = $_POST['agree'];
 $code = $_POST['code'];
+$node = $_POST['node'];
 
 $c = new \Ss\User\UserCheck();
 $code = new \Ss\User\InviteCode($code);
@@ -39,7 +40,7 @@ if($invite_necessary){
     $invite_num = rand($user_invite_min,$user_invite_max);
     //do reg
     $reg = new \Ss\User\Reg();
-    $reg->Reg($name,$email,$passwd,$plan,$transfer,$invite_num,$ref_by);
+    $reg->Reg($name,$email,$passwd,$plan,$transfer,$invite_num,$ref_by,$node);
     if($code->IsCodeOk())
         $code->Del();
     $a['ok'] = '1';

@@ -21,7 +21,16 @@ namespace Ss\Node;
          return $node_array;
      }
 
-     function Add($node_name,$node_type,$node_server,$node_method,$node_info,$node_status,$node_order){
+    function AllNodeAvailable(){
+         $node_array = $this->db->select("ss_node","*",[
+            "node_state[>]" => 0,
+             "ORDER" => "node_order"
+             //"LIMIT" => 21
+         ]);
+         return $node_array;
+     }
+
+     function Add($node_name,$node_type,$node_server,$node_method,$node_info,$node_status,$node_state,$node_order){
          $this->db->insert("ss_node", [
              "node_name" => $node_name,
              "node_type" => $node_type,
@@ -29,6 +38,7 @@ namespace Ss\Node;
              "node_method" => $node_method,
              "node_info" => $node_info,
              "node_status" => $node_status,
+             "node_state" => $node_state,
              "node_order" =>  $node_order
          ]);
          return 1;
