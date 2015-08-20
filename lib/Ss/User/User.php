@@ -22,6 +22,13 @@ namespace Ss\User;
         return $datas;
      }
 
+    function AllNodeUser($node_id){
+        $datas = $this->db->select($this->table,"*", [
+            'node_id' => $node_id
+        ]);
+        return $datas;
+     }
+
      function updateUser($name,$email,$passwd,$transfer_enable,$invite_num){
          return $this->db->update($this->table,[
              `user_name` => $name,

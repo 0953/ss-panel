@@ -18,7 +18,20 @@ $Users = new Ss\User\User();
         <section class="content">
             <div class="row">
                 <div class="col-xs-12">
-                    <p> <a class="btn btn-success btn-sm" href="user_add.php">添加</a> </p>
+                    <div class="row">
+                        <div class="col-xs-1">
+                            <a class="btn btn-success btn-sm" href="user_add.php">添加</a>
+                        </div>
+                        <div class="col-xs-3">
+                            <select class="form-control" id="node">
+                              <?php 
+                              $nodes = (new Ss\Node\Node())->AllNode();
+                              foreach($nodes as $node) { ?>
+                              <option value="<?php echo $node['id'] ?>"><?php echo $node['node_name'] ?></option>
+                              <?php } ?>
+                            </select>
+                        </div>
+                    </div>
                     <div class="box">
                         <div class="box-body table-responsive no-padding">
                             <table class="table table-hover">
