@@ -23,6 +23,9 @@ namespace Ss\User;
      }
 
     function AllNodeUser($node_id){
+        if(! $node_id)
+            return $this->AllUser();
+
         $datas = $this->db->select($this->table,"*", [
             'node_id' => $node_id
         ]);

@@ -39,11 +39,11 @@ $node = new Ss\Node\Node();
                                         <td>#<?php echo $rs['id']; ?></td>
                                         <td> <?php echo $rs['node_name']; ?></td>
                                         <td> <?php echo $rs['node_method']; ?></td>
-                                        <td><?php echo $rs['node_info']; ?></td>
-                                        <td><?php echo $rs['node_order']; ?></td>
+                                        <td> <?php echo $rs['node_info']; ?></td>
+                                        <td> <?php echo $rs['node_order']; ?></td>
                                         <td>
                                             <a class="btn btn-info btn-sm" href="node_edit.php?id=<?php echo $rs['id']; ?>">编辑</a>
-                                            <a class="btn btn-danger btn-sm" href="node_del.php?id=<?php echo $rs['id']; ?>">删除</a>
+                                            <a class="btn btn-danger btn-sm" href="node_del.php?id=<?php echo $rs['id']; ?>" onclick="aletr('是否同时删除所有端口')">删除</a>
                                         </td>
                                     </tr>
                                 <?php } ?>

@@ -10,9 +10,10 @@ if(!empty($_POST)){
     $node_method   = $_POST['node_method'];
     $node_info     = $_POST['node_info'];
     $node_status   = $_POST['node_status'];
+    $node_state    = $_POST['node_state'];
     $node_order    = $_POST['node_order'];
     $node = new \Ss\Node\NodeInfo($node_id);
-    $query = $node->Update($node_name,$node_type,$node_server,$node_method,$node_info,$node_status,$node_order);
+    $query = $node->Update($node_name,$node_type,$node_server,$node_method,$node_info,$node_status,$node_state,$node_order);
     if($query){
         echo ' <script>alert("更新成功!")</script> ';
         echo " <script>window.location='node.php';</script> " ;
@@ -89,6 +90,11 @@ if(!empty($_GET)){
                             <div class="form-group">
                                 <label for="cate_order">状态</label>
                                 <input   class="form-control" name="node_status"  value="<?php echo $rs['node_status'];?>" >
+                            </div>
+
+                            <div class="form-group">
+                                <label for="cate_order">状态值(0或者1)</label>
+                                <input   class="form-control" name="node_state"  value="<?php echo $rs['node_state'];?>" >
                             </div>
 
                             <div class="form-group">

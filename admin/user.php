@@ -23,7 +23,7 @@ $Users = new Ss\User\User();
                             <a class="btn btn-success btn-sm" href="user_add.php">添加</a>
                         </div>
                         <div class="col-xs-3">
-                            <select class="form-control" id="node">
+                            <select class="form-control" id="node" href="user.php" >
                               <?php 
                               $nodes = (new Ss\Node\Node())->AllNode();
                               foreach($nodes as $node) { ?>
@@ -47,7 +47,8 @@ $Users = new Ss\User\User();
                                     <th>操作</th>
                                 </tr>
                                 <?php
-                                $us = $Users->AllUser();
+                                $node_id = $_POST['node_id'];
+                                $us = $Users->AllNodeUser($node_id);
                                 foreach ( $us as $rs ){ ?>
                                     <tr>
                                         <td>#<?php echo $rs['uid']; ?></td>

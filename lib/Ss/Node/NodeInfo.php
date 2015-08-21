@@ -25,12 +25,14 @@ class NodeInfo extends \Ss\Etc\Db {
     }
 
     function Del(){
+        (new \Ss\Node\Port())->DelNodePort($this->id);
+        
         $this->db->delete($this->table,[
             "id" => $this->id
         ]);
     }
 
-    function Update($node_name,$node_type,$node_server,$node_method,$node_info,$node_status,$node_order){
+    function Update($node_name,$node_type,$node_server,$node_method,$node_info,$node_status,$node_state,$node_order){
         $this->db->update("ss_node", [
             "node_name" => $node_name,
             "node_type" => $node_type,
@@ -38,6 +40,7 @@ class NodeInfo extends \Ss\Etc\Db {
             "node_method" => $node_method,
             "node_info" => $node_info,
             "node_status" => $node_status,
+            "node_state" => $node_state,
             "node_order" =>  $node_order
         ],[
             "id[=]"  => $this->id

@@ -31,7 +31,7 @@ namespace Ss\Node;
      }
 
      function Add($node_name,$node_type,$node_server,$node_method,$node_info,$node_status,$node_state,$node_order){
-         $this->db->insert("ss_node", [
+         $node_id = $this->db->insert("ss_node", [
              "node_name" => $node_name,
              "node_type" => $node_type,
              "node_server" => $node_server,
@@ -41,6 +41,9 @@ namespace Ss\Node;
              "node_state" => $node_state,
              "node_order" =>  $node_order
          ]);
+
+         (new \Ss\Node\Port())->AddNodePort($node_id);
+
          return 1;
      }
 

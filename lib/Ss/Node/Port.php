@@ -29,7 +29,7 @@ namespace Ss\Node;
          return $node_array;
      }
 
-     function RevertPort($node_id, $port){
+    function RevertPort($node_id, $port){
         $this->db->update($this->table, [
             'used' => 0
         ], [
@@ -38,5 +38,18 @@ namespace Ss\Node;
                 'port' => $port
             ]
         ]);
-     }
+    }
+
+    function AddNodePort($node_id){
+        for($port=3774; $port<= 65534; $port+=37){
+            $sql[] = "($node_id, $port)";
+        }
+        $this->db->query("insert into ss_port (node_id, port) values" . implode(',',$sql) );
+    }
+
+    function DelNodePort($node_id){
+        $this->db->delete($this->table,[
+            "node_id" => $node_id
+        ]);
+    }
 }
