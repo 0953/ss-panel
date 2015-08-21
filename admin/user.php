@@ -1,6 +1,7 @@
 <?php
 require_once '_main.php';
 $Users = new Ss\User\User();
+$node_id = $_GET['node'];
 ?>
 
 
@@ -23,11 +24,11 @@ $Users = new Ss\User\User();
                             <a class="btn btn-success btn-sm" href="user_add.php">添加</a>
                         </div>
                         <div class="col-xs-3">
-                            <select class="form-control" id="node" href="user.php" >
+                            <select class="form-control" id="node" onchange="onNodeChanged()" >
                               <?php 
                               $nodes = (new Ss\Node\Node())->AllNode();
                               foreach($nodes as $node) { ?>
-                              <option value="<?php echo $node['id'] ?>"><?php echo $node['node_name'] ?></option>
+                              <option value="<?php echo $node['id']; ?>" <?php if($node['id'] == $node_id){echo ' selected="selected"';} ?>><?php echo $node['node_name'] ?></option>
                               <?php } ?>
                             </select>
                         </div>
@@ -47,7 +48,6 @@ $Users = new Ss\User\User();
                                     <th>操作</th>
                                 </tr>
                                 <?php
-                                $node_id = $_POST['node_id'];
                                 $us = $Users->AllNodeUser($node_id);
                                 foreach ( $us as $rs ){ ?>
                                     <tr>
@@ -73,5 +73,13 @@ $Users = new Ss\User\User();
 
         </section><!-- /.content -->
     </div><!-- /.content-wrapper -->
+
+<script type="text/javascript">
+    $("#node").val(18);
+    function onNodeChanged(){
+        window.location.href='user.php?node='+$("#node").val();
+    }
+</script>
+
 <?php
 require_once '_footer.php'; ?>
