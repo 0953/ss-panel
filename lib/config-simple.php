@@ -13,6 +13,7 @@ $invite_necessary = false;
 $show_user_node = false;
 $show_copyright = false;
 $node_addr = '127.0.0.1';
+$use_ssh_mode = false;
 
 //定义流量
 $tokb = 1024;

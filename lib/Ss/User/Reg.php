@@ -1,6 +1,5 @@
 <?php
 
-
 namespace Ss\User;
 
 
@@ -40,8 +39,8 @@ class Reg {
 
         $sspass = \Ss\Etc\Comm::get_random_char(8);
 
-        $this->db->insert($this->table,[
-           "user_name" => $username,
+        $uid = $this->db->insert($this->table,[
+            "user_name" => $username,
             "email" => $email,
             "pass" => $pass,
             "passwd" => $sspass,
@@ -58,6 +57,12 @@ class Reg {
             "ref_by" => $ref_by,
             "f_adfilter" => 0
         ]);
+
+        if(true){
+            $ssh = new \Ss\User\Ssh();
+            $ssh = $ssh->getUnallocated();
+            $ssh->allocat($uid);
+        }
     }
 
 }

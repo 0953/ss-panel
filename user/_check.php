@@ -18,3 +18,8 @@ if(isset($_COOKIE['uid'])|| $_COOKIE['uid'] != ''){
     exit();
 }
 $oo = new Ss\User\Ss($uid);
+
+if(use_ssh_mode){
+    $ssh = new Ss\User\Ssh();
+    $ssh = $ssh->getInfo($uid);
+}
