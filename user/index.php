@@ -97,6 +97,7 @@ $unix_time = $oo->get_last_unix_time();
                             <?php if(use_ssh_mode){ ?>
                             <p> 服务器：<code><?php echo $ssh['server'];?></code> </p>
                             <p> 账号：<code><?php echo $ssh['account'];?></code> </p>
+                            <p> 端口：<code><?php echo $ssh['port'];?></code> </p>
                             <p> 密码：<?php echo $ssh['passwd'];?> </p>
                             <p> 套餐：<span class="label label-info"> <?php echo $oo->get_plan();?> </span> </p>
                             <p> 最后使用时间：<code><?php echo date('Y-m-d H:i:s',$unix_time);  ?></code> </p>

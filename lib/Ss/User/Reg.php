@@ -58,7 +58,7 @@ class Reg {
             "f_adfilter" => 0
         ]);
 
-        if(true){
+        if($use_ssh_mode){
             $ssh = new \Ss\User\Ssh();
             $ssh = $ssh->getUnallocated();
             $ssh->allocat($uid);
