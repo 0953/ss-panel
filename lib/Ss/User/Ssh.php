@@ -10,12 +10,21 @@ namespace Ss\User;
      private $db;
 
      private $table = "ssh_user";
+     private $count = 50;
 
      function __construct($id=0){
          global $db;
          $this->id = $id;
          $this->db  = $db;
      }
+
+    function getCount(){
+        $datas = $this->db->select($this->table,"*",[
+            "user_id[>]" => 0
+        ]);
+
+        return $this->count - count($datas);
+    } 
 
     function getInfo($uid){
         $datas = $this->db->select($this->table,"*",[

@@ -11,7 +11,11 @@ $node = $_POST['node'];
 
 $c = new \Ss\User\UserCheck();
 $code = new \Ss\User\InviteCode($code);
-if($invite_necessary){
+$count = (new \Ss\User\Ssh())->getCount();
+
+if($count <= 0){
+    $a['msg'] = "注册名额已满";
+}elseif($invite_necessary){
     if(!$code->IsCodeOk())
         $a['msg'] = "邀请码无效";
 }elseif(!$c->IsEmailLegal($email)){

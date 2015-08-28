@@ -47,11 +47,11 @@ require_once '../lib/config.php';
                 <input type="password" id="repasswd" class="form-control" placeholder="重复密码"/>
                 <span class="glyphicon glyphicon-log-in form-control-feedback"></span>
             </div>
-            <div class="form-group has-feedback">
+            <div class="form-group has-feedback" style="display:none;">
                 <input type="text" id="code" class="form-control" placeholder="邀请码，可不填"/>
                 <span class="glyphicon glyphicon-send form-control-feedback"></span>
             </div>            
-            <div class="form-group has-feedback">
+            <div class="form-group has-feedback" style="display:none;">
                 <select class="form-control" id="node">
                   <?php 
                   $nodes = (new Ss\Node\Node())->AllNodeAvailable();
@@ -60,7 +60,12 @@ require_once '../lib/config.php';
                   <?php } ?>
                 </select>
             </div>
-
+            
+            <?php if(use_ssh_mode){ ?>
+            <div class="form-group has-feedback">
+               <p>剩余可注册名额：<?php echo (new \Ss\User\Ssh())->getCount(); ?></p>
+            </div>
+            <?php } ?>
 
             <div class="form-group has-feedback">
                <p>注册即代表同意<a href="tos.php">服务条款</a></p>
